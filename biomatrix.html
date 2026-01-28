@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biomatrix Case Study | Letícia Aragão</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Archivo:wght@800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#1D1D1D',
+                        light: '#E9E9E9',
+                        accent: '#F2522E',
+                        cyan: '#0ED7DE',
+                        teal: '#00878C',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Archivo', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .text-huge {
+            font-size: clamp(3rem, 12vw, 10rem);
+            line-height: 0.8;
+            letter-spacing: -0.05em;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(to bottom, #1D1D1D 0%, #00878C 100%);
+        }
+
+        /* Video styling */
+        video {
+            filter: grayscale(100%);
+            transition: filter 0.5s ease;
+        }
+        video:hover {
+            filter: grayscale(0%);
+        }
+    </style>
+</head>
+<body class="bg-dark text-light overflow-x-hidden font-sans">
+
+    <!-- Back Navigation -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-8 flex justify-between items-center mix-blend-difference">
+        <a href="index.html" class="flex items-center gap-2 group">
+            <i data-lucide="arrow-left" class="w-5 h-5 group-hover:-translate-x-1 transition"></i>
+            <span class="font-heading text-sm font-black uppercase tracking-widest">Back to Portfolio</span>
+        </a>
+        <div class="hidden md:block">
+            <span class="font-heading text-xl font-black tracking-tighter">LA.</span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="min-h-screen flex flex-col justify-center px-6 md:px-16 pt-32 relative">
+        <div class="absolute inset-0 z-0 opacity-20">
+            <img src="./template/img/01 - Mockup Lago _Biomatrix.png" alt="Background" class="w-full h-full object-cover">
+        </div>
+        
+        <div class="relative z-10 reveal">
+            <p class="text-cyan font-black uppercase tracking-[0.4em] text-[10px] mb-6">Case Study — 2026</p>
+            <h1 class="font-heading text-huge font-black uppercase mb-12">
+                BIOMATRIX<br>
+                <span class="text-transparent" style="-webkit-text-stroke: 1.5px #E9E9E9;">ECOSYSTEM</span>
+            </h1>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-20 border-t border-white/10 pt-10">
+                <div>
+                    <h4 class="text-accent text-[10px] font-black uppercase tracking-widest mb-4 italic">Role</h4>
+                    <p class="text-sm font-light uppercase tracking-widest leading-relaxed">UI/UX Design<br>Art Direction<br>Motion Design</p>
+                </div>
+                <div>
+                    <h4 class="text-accent text-[10px] font-black uppercase tracking-widest mb-4 italic">The Vision</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed font-light">
+                        Elevating minds and sustaining futures through a seamless fusion of supplement technology and digital tracking.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-accent text-[10px] font-black uppercase tracking-widest mb-4 italic">Outcome</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed font-light">
+                        A futuristic, data-driven mobile experience that empowers users to optimize their bio-performance.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Project Visuals 01 -->
+    <section class="py-20 px-6 md:px-16 bg-light">
+        <div class="reveal">
+            <img src="./template/img/biomatrix.png" alt="Laptop Mockup" class="w-full rounded-2xl shadow-2xl">
+        </div>
+    </section>
+
+    <!-- The Narrative -->
+    <section class="py-32 px-6 md:px-16 bg-dark">
+        <div class="max-w-4xl reveal">
+            <h2 class="font-heading text-5xl md:text-7xl font-black uppercase mb-12 leading-none">The Digital<br><span class="text-cyan italic">Blueprint</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-gray-400 text-lg font-light leading-relaxed">
+                <p>
+                    Biomatrix required an interface that mirrored the high-tech nature of its supplements. We moved away from generic health aesthetics to embrace a "cyber-humanist" look—combining medical precision with high-performance visuals.
+                </p>
+                <p>
+                    Each user interaction within the app was designed to feel like a dashboard from the future, focusing on three core pillars: <span class="text-accent font-bold">Focus</span>, <span class="text-cyan font-bold">Energy</span>, and <span class="text-teal font-bold">Relax</span>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Animation Section -->
+    <section class="py-32 px-6 md:px-16 bg-[#111]">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+            <div class="reveal">
+                <h3 class="font-heading text-4xl font-black uppercase mb-6 italic">Motion Identity</h3>
+                <p class="text-gray-500 mb-8 leading-relaxed font-light">
+                    The brand's heartbeat is captured through motion. The logo animation reflects the biological and technological intersection, using clean geometric transformations.
+                </p>
+                <div class="flex gap-4">
+                    <span class="w-10 h-[1px] bg-accent self-center"></span>
+                    <span class="text-[10px] uppercase font-black tracking-widest text-accent">Logo Evolution</span>
+                </div>
+            </div>
+            <div class="reveal glass rounded-3xl overflow-hidden p-2" style="transition-delay: 200ms;">
+                <video autoplay muted loop class="w-full rounded-2xl">
+                    <source src="./template/img/Biomatrix Logo Animation.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- Supplement Mockup Section -->
+    <section class="py-32 px-6 md:px-16 bg-light text-dark">
+        <div class="flex flex-col md:flex-row justify-between items-start mb-16 gap-10">
+            <h2 class="font-heading text-6xl md:text-8xl font-black uppercase leading-none">Physical<br>X Digital</h2>
+            <p class="max-w-md text-gray-600 font-medium">
+                The label design translates directly into the app UI, creating a cohesive brand universe that lives in your kitchen and on your phone.
+            </p>
+        </div>
+        <div class="reveal">
+            <img src="./template/img/01 - Mockup Lago _Biomatrix.png" alt="Supplement Mockup" class="w-full rounded-sm grayscale hover:grayscale-0 transition duration-700">
+        </div>
+    </section>
+
+    <!-- Gallery / Details -->
+    <section class="py-32 px-6 md:px-16 bg-dark">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal">
+            <div class="h-[600px] bg-[#151515] rounded-3xl flex items-center justify-center p-12 border border-white/5">
+                <div class="text-center">
+                    <i data-lucide="zap" class="w-12 h-12 text-accent mx-auto mb-6"></i>
+                    <h4 class="font-heading text-3xl uppercase font-black">Energy Mode</h4>
+                    <p class="text-gray-500 text-sm mt-4">Optimized UI for high-alert activity tracking.</p>
+                </div>
+            </div>
+            <div class="h-[600px] bg-[#151515] rounded-3xl flex items-center justify-center p-12 border border-white/5">
+                <div class="text-center">
+                    <i data-lucide="brain" class="w-12 h-12 text-cyan mx-auto mb-6"></i>
+                    <h4 class="font-heading text-3xl uppercase font-black">Focus State</h4>
+                    <p class="text-gray-500 text-sm mt-4">Minimalist views for deep work sessions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-32 bg-dark border-t border-white/5 text-center px-6">
+        <h2 class="font-heading text-5xl md:text-8xl font-black uppercase mb-16 leading-none">NEXT<br><span class="text-accent italic">PROJECT</span></h2>
+        <a href="index.html" class="inline-block px-12 py-6 border border-light/20 rounded-full font-heading text-xl font-black uppercase hover:bg-light hover:text-dark transition duration-500">
+            Back to Home
+        </a>
+        <div class="mt-24 text-[9px] font-black uppercase tracking-[0.4em] opacity-30">
+            Letícia Aragão — Biomatrix Case Study — © 2026
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script>
+</body>
+</html>
