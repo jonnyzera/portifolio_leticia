@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letícia Aragão | UI/UX & Visual Designer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Fonts: Inter for Body, Archivo for Headings (Neo-grotesque) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Archivo:wght@800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#1D1D1D',
+                        light: '#E9E9E9',
+                        accent: '#F2522E',
+                        cyan: '#0ED7DE',
+                        teal: '#00878C',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Archivo', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Neo-grotesque Typography Styles */
+        .text-huge {
+            font-size: clamp(3rem, 15vw, 12rem);
+            line-height: 0.85;
+            letter-spacing: -0.05em;
+        }
+
+        /* Smooth Gradient Blocks */
+        .gradient-dark-teal {
+            background: linear-gradient(180deg, #1D1D1D 0%, #00878C 100%);
+        }
+
+        .gradient-teal-light {
+            background: linear-gradient(180deg, #00878C 0%, #E9E9E9 100%);
+        }
+
+        /* Custom Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Image hover effect */
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .accent-line {
+            height: 2px;
+            background: #F2522E;
+            width: 0;
+            transition: width 0.5s ease;
+        }
+
+        .group:hover .accent-line {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-dark text-light overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 mix-blend-difference px-6 py-6 flex justify-between items-center">
+        <a href="#" class="font-heading text-2xl font-black tracking-tighter">LA<span class="text-accent">.</span></a>
+        <div class="hidden md:flex gap-12 text-[10px] uppercase font-bold tracking-[0.2em]">
+            <a href="#work" class="hover:text-cyan transition">Projects</a>
+            <a href="#about" class="hover:text-cyan transition">About</a>
+            <a href="#resume" class="hover:text-cyan transition">Resume</a>
+            <a href="mailto:leticiaoaragao@gmail.com" class="text-accent">Contact</a>
+        </div>
+        <button class="md:hidden"><i data-lucide="menu"></i></button>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="min-h-screen flex flex-col justify-center px-6 md:px-12 pt-20 relative overflow-hidden">
+        <!-- Abstract Background Element -->
+        <div class="absolute -top-20 -right-20 w-[500px] h-[500px] bg-teal opacity-10 blur-[120px] rounded-full"></div>
+        
+        <div class="relative z-10">
+            <p class="text-accent font-bold uppercase tracking-widest text-xs mb-4">Letícia Aragão — Designer</p>
+            <h1 class="font-heading text-huge font-black uppercase">
+                DIGITAL<br>
+                <span class="text-transparent" style="-webkit-text-stroke: 1px #E9E9E9;">EMOTION</span><br>
+                FUTURISM
+            </h1>
+            
+            <div class="mt-12 flex flex-col md:flex-row md:items-center gap-8">
+                <p class="max-w-md text-gray-400 text-sm leading-relaxed">
+                    Senior Visual Designer specializing in UI/UX and Brand Identity. 
+                    Based in Brazil, working for the world.
+                </p>
+                <a href="#work" class="group flex items-center gap-4">
+                    <span class="w-12 h-12 rounded-full border border-light flex items-center justify-center group-hover:bg-accent group-hover:border-accent transition-all duration-300">
+                        <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
+                    </span>
+                    <span class="uppercase text-[10px] font-bold tracking-widest">Explore Portfolio</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Work Gallery Section -->
+    <section id="work" class="py-32 bg-light text-dark px-6 md:px-12">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 gap-6">
+            <h2 class="font-heading text-6xl md:text-8xl font-black uppercase">Selected<br>Works</h2>
+            <div class="md:text-right">
+                <p class="text-xs uppercase font-bold tracking-widest mb-2 opacity-50">Filter by category</p>
+                <div class="flex flex-wrap gap-4 text-[10px] uppercase font-bold">
+                    <span class="text-accent">All</span>
+                    <span class="hover:text-teal transition cursor-pointer">UI/UX</span>
+                    <span class="hover:text-teal transition cursor-pointer">Branding</span>
+                    <span class="hover:text-teal transition cursor-pointer">Editorial</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
+            <!-- Project 1: UI/UX (Biomatrix) -->
+            <div class="group project-card reveal">
+                <div class="aspect-[4/3] bg-dark overflow-hidden mb-6">
+                    <img src="biomatrix.jpg" alt="Biomatrix UI Design" class="w-full h-full object-cover transition-transform duration-700 grayscale hover:grayscale-0">
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="font-heading text-2xl uppercase">Biomatrix App</h3>
+                        <p class="text-xs uppercase tracking-widest opacity-60">UI/UX Design • Product Concept</p>
+                    </div>
+                    <i data-lucide="external-link" class="w-5 h-5 opacity-30 group-hover:opacity-100 transition-opacity"></i>
+                </div>
+                <div class="accent-line mt-4"></div>
+            </div>
+
+            <!-- Project 2: Visual Identity (Tal do Prazer) -->
+            <div class="group project-card reveal" style="transition-delay: 200ms;">
+                <div class="aspect-[4/3] bg-dark overflow-hidden mb-6">
+                    <img src="tal_prazer.jpg" alt="Tal do Prazer Branding" class="w-full h-full object-cover transition-transform duration-700 grayscale hover:grayscale-0">
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="font-heading text-2xl uppercase">Tal do Prazer</h3>
+                        <p class="text-xs uppercase tracking-widest opacity-60">Visual Identity • Branding</p>
+                    </div>
+                    <i data-lucide="external-link" class="w-5 h-5 opacity-30 group-hover:opacity-100 transition-opacity"></i>
+                </div>
+                <div class="accent-line mt-4"></div>
+            </div>
+
+            <!-- Project 3: Social Media (LPQV) -->
+            <div class="group project-card reveal">
+                <div class="aspect-[4/3] bg-dark overflow-hidden mb-6">
+                    <img src="social_media.webp" alt="Social Media Strategy" class="w-full h-full object-cover transition-transform duration-700 grayscale hover:grayscale-0">
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="font-heading text-2xl uppercase">LPQV Performance</h3>
+                        <p class="text-xs uppercase tracking-widest opacity-60">Social Media Content • Art Direction</p>
+                    </div>
+                    <i data-lucide="external-link" class="w-5 h-5 opacity-30 group-hover:opacity-100 transition-opacity"></i>
+                </div>
+                <div class="accent-line mt-4"></div>
+            </div>
+
+            <!-- Project 4: Editorial/Lights (Taschibra) -->
+            <div class="group project-card reveal" style="transition-delay: 200ms;">
+                <div class="aspect-[4/3] bg-dark overflow-hidden mb-6">
+                    <img src="taschiba.jpg" alt="Taschibra Product Design" class="w-full h-full object-cover transition-transform duration-700 grayscale hover:grayscale-0">
+                </div>
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h3 class="font-heading text-2xl uppercase">Taschibra Studio</h3>
+                        <p class="text-xs uppercase tracking-widest opacity-60">Product Layout • Editorial Design</p>
+                    </div>
+                    <i data-lucide="external-link" class="w-5 h-5 opacity-30 group-hover:opacity-100 transition-opacity"></i>
+                </div>
+                <div class="accent-line mt-4"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Visual Intro Section -->
+    <section id="about" class="py-32 gradient-dark-teal px-6 md:px-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+            <div class="relative reveal">
+                <div class="absolute -top-4 -left-4 w-full h-full border border-cyan rounded-2xl"></div>
+                <img src="foto_cliente_01.jpg" alt="Letícia Aragão" class="rounded-2xl relative z-10 w-full h-auto object-cover grayscale">
+            </div>
+            <div class="reveal" style="transition-delay: 300ms;">
+                <h2 class="font-heading text-5xl md:text-7xl font-black uppercase mb-8">About<br>Letícia</h2>
+                <div class="space-y-6 text-gray-300 text-lg">
+                    <p>
+                        With over 5 years of experience in the design industry, I bridge the gap between pure aesthetics and functional user experiences. My work is heavily influenced by <span class="text-cyan">neo-grotesque typography</span> and <span class="text-accent">futuristic visual systems</span>.
+                    </p>
+                    <p>
+                        I believe that every digital touchpoint should evoke an emotion. Whether it's a mobile app or a visual identity, the goal is to create something that feels alive and forward-thinking.
+                    </p>
+                    <div class="flex gap-6 pt-6">
+                        <div class="text-center">
+                            <span class="block text-3xl font-black font-heading text-accent">50+</span>
+                            <span class="text-[10px] uppercase font-bold tracking-widest">Projects</span>
+                        </div>
+                        <div class="text-center">
+                            <span class="block text-3xl font-black font-heading text-cyan">15+</span>
+                            <span class="text-[10px] uppercase font-bold tracking-widest">Brands</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Resume Section -->
+    <section id="resume" class="py-32 bg-light text-dark px-6 md:px-12">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex justify-between items-baseline mb-20 border-b border-dark/10 pb-6">
+                <h2 class="font-heading text-6xl md:text-8xl font-black uppercase">Resume</h2>
+                <a href="mailto:leticiaoaragao@gmail.com" class="text-xs uppercase font-bold tracking-[0.2em] hover:text-accent flex items-center gap-2">
+                    Request PDF <i data-lucide="download" class="w-3 h-3"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+                <!-- Column 1: Experience -->
+                <div class="md:col-span-2 space-y-16">
+                    <div class="reveal">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="font-heading text-2xl uppercase">Senior Visual Designer</h3>
+                            <span class="text-xs font-bold bg-dark text-light px-3 py-1 rounded-full italic">Current</span>
+                        </div>
+                        <p class="text-accent font-bold text-sm mb-4">Freelance / International Markets</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Developing end-to-end visual solutions for startups in Europe and North America. Focusing on scalable design systems and high-conversion landing pages using the latest UI/UX trends.
+                        </p>
+                    </div>
+
+                    <div class="reveal">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="font-heading text-2xl uppercase">UI/UX Designer</h3>
+                            <span class="text-xs font-bold opacity-40 italic">2021 — 2023</span>
+                        </div>
+                        <p class="text-teal font-bold text-sm mb-4">LPQV / E-commerce Solutions</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Led the creative direction for the "Editor LPQV", improving user retention by 35% through intuitive interface updates and a refreshed visual language.
+                        </p>
+                    </div>
+
+                    <div class="reveal">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="font-heading text-2xl uppercase">Graphic Designer</h3>
+                            <span class="text-xs font-bold opacity-40 italic">2019 — 2021</span>
+                        </div>
+                        <p class="text-dark font-bold text-sm mb-4">Branding Agency</p>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Crafting visual identities and editorial layouts for local and national brands. Specialized in translating brand values into cohesive visual assets.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Column 2: Skills & Education -->
+                <div class="space-y-16">
+                    <div class="reveal">
+                        <h4 class="font-heading text-xl uppercase mb-8 border-l-4 border-accent pl-4">Expertise</h4>
+                        <ul class="space-y-4 text-xs font-bold uppercase tracking-widest">
+                            <li class="flex justify-between"><span>UI/UX Design</span> <span class="text-accent">90%</span></li>
+                            <li class="flex justify-between"><span>Branding</span> <span class="text-accent">95%</span></li>
+                            <li class="flex justify-between"><span>Editorial Layout</span> <span class="text-accent">85%</span></li>
+                            <li class="flex justify-between"><span>Motion Graphics</span> <span class="text-accent">70%</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="reveal">
+                        <h4 class="font-heading text-xl uppercase mb-8 border-l-4 border-teal pl-4">Education</h4>
+                        <div class="mb-6">
+                            <p class="font-bold text-sm">B.A. in Graphic Design</p>
+                            <p class="text-xs opacity-60">Federal University — 2019</p>
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm">Advanced UI/UX Certification</p>
+                            <p class="text-xs opacity-60">Interaction Design Foundation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA / Contact -->
+    <section class="py-32 bg-dark text-center px-6 overflow-hidden relative">
+        <div class="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
+            <span class="font-heading text-[30vw] font-black uppercase select-none">LETICIA</span>
+        </div>
+        
+        <div class="relative z-10 reveal">
+            <h2 class="font-heading text-5xl md:text-8xl font-black uppercase mb-12">
+                LET'S BUILD THE<br>
+                <span class="text-accent">FUTURE</span> TOGETHER
+            </h2>
+            <p class="text-gray-400 mb-12 max-w-xl mx-auto">
+                Currently available for selected freelance projects and full-time opportunities worldwide.
+            </p>
+            <a href="mailto:leticiaoaragao@gmail.com" class="inline-block bg-accent px-12 py-6 rounded-full font-heading text-2xl font-black uppercase hover:scale-105 transition duration-300">
+                Contact Me
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 md:px-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="text-[10px] font-bold uppercase tracking-widest opacity-30">
+            © 2026 Letícia Aragão — Developed with Precision
+        </div>
+        <div class="flex gap-8">
+            <a href="#" class="hover:text-cyan transition"><i data-lucide="linkedin"></i></a>
+            <a href="#" class="hover:text-cyan transition"><i data-lucide="instagram"></i></a>
+            <a href="#" class="hover:text-cyan transition"><i data-lucide="behance"></i></a>
+        </div>
+        <a href="#" class="text-[10px] font-bold uppercase tracking-widest hover:text-accent">Back to top ↑</a>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Reveal Animation on Scroll
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        // Trigger once on load
+        reveal();
+    </script>
+</body>
+</html>
